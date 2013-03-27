@@ -143,7 +143,7 @@
 
         createEditor: function(options) {
             options = options || {};
-            
+
             // Add the toolbar to a clone of the options object so multiple instances
             // of the WYISYWG don't break because "toolbar" is already defined
             options = $.extend(true, {}, options);
@@ -212,7 +212,11 @@
                 self.toolbar.find('.current-color').text(el.html());
             });
 
-            this.el.before(toolbar);
+            if(options.toolbarContainer) {
+                $(options.toolbarContainer).append(toolbar);
+            } else {
+                this.el.before(toolbar);
+            }
 
             return toolbar;
         },
@@ -372,7 +376,7 @@
             return methods.init.apply( this, arguments );
         } else {
             $.error( 'Method ' +  method + ' does not exist on jQuery.wysihtml5' );
-        }    
+        }
     };
 
     $.fn.wysihtml5.Constructor = Wysihtml5;
