@@ -21,9 +21,9 @@
             var size = (options && options.size) ? ' btn-'+options.size : '';
             return "<li>" +
               "<div class='btn-group'>" +
-                "<a class='btn" + size + "' data-wysihtml5-command='bold' title='CTRL+B' data-toggle='tooltip' tabindex='-1'>" + locale.emphasis.bold + "</a>" +
-                "<a class='btn" + size + "' data-wysihtml5-command='italic' title='CTRL+I' data-toggle='tooltip' tabindex='-1'>" + locale.emphasis.italic + "</a>" +
-                "<a class='btn" + size + "' data-wysihtml5-command='underline' title='CTRL+U' data-toggle='tooltip' tabindex='-1'>" + locale.emphasis.underline + "</a>" +
+                "<a class='btn" + size + "' data-wysihtml5-command='bold' title='" + locale.keys.CTRL_B + "' data-toggle='tooltip' tabindex='-1'>" + locale.emphasis.bold + "</a>" +
+                "<a class='btn" + size + "' data-wysihtml5-command='italic' title='" + locale.keys.CTRL_I + "' data-toggle='tooltip' tabindex='-1'>" + locale.emphasis.italic + "</a>" +
+                "<a class='btn" + size + "' data-wysihtml5-command='underline' title='" + locale.keys.CTRL_U + "' data-toggle='tooltip' tabindex='-1'>" + locale.emphasis.underline + "</a>" +
               "</div>" +
             "</li>";
         },
@@ -456,6 +456,11 @@
 
     var locale = $.fn.wysihtml5.locale = {
         en: {
+            keys: {
+                CTRL_B: "CTRL+B",
+                CTRL_I: "CTRL+I",
+                CTRL_U: "CTRL+U"
+            },
             font_styles: {
                 normal: "Normal text",
                 h1: "Heading 1",
